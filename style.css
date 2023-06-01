@@ -235,3 +235,43 @@
     line-height: 15px;
     text-align: center;
 }
+
+.client-content,.med-content, .phase-content, .medotd-content, .reg-content, .default-content {
+    display: none;
+}
+
+.active-content {
+    display: initial;
+}
+
+.default-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.default-huge-text {
+    font-weight: 600;
+    font-size: 60px;
+    color: #FF8000;
+}
+
+.default-text {
+    font-size: 24px;
+    line-height: 29px;
+    color: #5C7CCD;
+    width: 187px;
+}
+
+.default-submit-button {
+    width: 413px;
+    height: 65px;
+    border-radius: 8px;
+    background: #4B66AB;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    line-height: 29px;
+    cursor: pointer;
+}

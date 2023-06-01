@@ -1,6 +1,7 @@
 let currentState = '';
 let activeCircle = document.querySelector('.circle-active');
 let activeLCircle, activeText;
+let activeContent = document.querySelector('.active-content');
 
 
 document.querySelectorAll('#circle-client,' +
@@ -51,5 +52,13 @@ function changeCircleState(el) {
 
     activeText = document.getElementById(`info-${elementType}`);
     activeText.classList.add('text-active');
+
+    if (activeContent != null) {
+        activeContent.classList.remove('active-content');
+    }
+
+    activeContent = document.getElementsByClassName(`${elementType}-content`)[0];
+    activeContent.classList.add('active-content');
+
 
 }
