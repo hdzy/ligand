@@ -117,35 +117,121 @@
     width: 110px;
 }
 
-#circle-client, #circle-med, #circle-phase, #circle-medotd, #circle-reg {
+#circle-client, #circle-med, #circle-phase, #circle-medotd, #circle-reg, #circle-l-client, #circle-l-med, #circle-l-phase, #circle-l-medotd, #circle-l-reg {
     position: absolute;
     cursor: pointer;
 }
 
+#circle-l-client:hover path, #circle-l-med:hover path, #circle-l-phase:hover path, #circle-l-medotd:hover path, #circle-l-reg:hover path,
+#info-client:hover + #circle-l-client path, #info-med:hover + #circle-l-med path, #info-phase:hover + #circle-l-phase path, #info-reg:hover + #circle-l-reg path, #info-medotd:hover + #circle-l-medotd path {
+    fill: rgba(226, 144, 71, 0.22);
+}
+
 #circle-client {
-    right: 1.1px;
-    top: 112.9px;
+    left: 402.55px;
+    top: 52.66px;
 }
 
 #circle-med {
-    bottom: 0;
-    right: 51.59px;
+    top: 344.84px;
+    left: 282.43px;
 }
 
 #circle-phase {
-    left: 0;
-    bottom: 11.5px;
+    left: 14.34px;
+    top: 347.54px;
 }
 
 #circle-medotd {
-    top: 15.5px;
+    top: 54.87px;
+    left: 0;
 }
 
 #circle-reg {
-    top: 1.8px;
-    right: 55px;
+    top: 1.2px;
+    left: 113.9px;
 }
 
 .circle-active path {
     fill: #E29047;
+}
+
+#circle-l-client {
+    top: 116.72px;
+    left: 344.19px;
+}
+
+#circle-l-med {
+    top: 313.69px;
+    left: 282.01px;
+}
+
+#circle-l-phase {
+    top: 315.61px;
+    left: 89.75px;
+}
+
+#circle-l-medotd {
+    top: 118.93px;
+    left: 79.3px;
+}
+
+#circle-l-reg {
+    left: 160.1px;
+    top: 79.9px;
+}
+
+.circle-l-active path {
+    fill: #E29047!important;
+}
+
+#info-client, #info-med, #info-phase, #info-medotd, #info-phase, #info-reg {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.text-active p{
+    color: #fff;
+}
+
+.text-active svg path {
+    fill: #fff;
+}
+
+#info-client {
+    /* 387 */
+    left:391.6px;
+    top: 205.7px;
+}
+
+#info-med {
+    left: 330.59px;
+    top: 359.33px;
+}
+
+#info-phase {
+    left: 128.93px;
+    top: 359.33px;
+}
+
+#info-medotd {
+    left: 83.99px;
+    top: 204.93px;
+}
+
+#info-reg{
+    left: 195.65px;
+    top: 91.6px;
+}
+
+.info-description {
+    color: #5C7CCD;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
 }
