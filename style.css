@@ -20,6 +20,7 @@
 .main-section {
     display: flex;
     max-width: 1110px;
+    min-width: 1110px;
     margin: 0 auto 85px auto;
     justify-content: space-between;
 }
@@ -80,4 +81,71 @@
 
 .circle-container {
     position: relative;
+    width: 561px;
+    height:562px;
+    margin-top: 25px;
+}
+
+.circle-center {
+    position: absolute;
+    top: calc(50% - 97px);
+    left: calc(50% - 97px);
+    width: 194px;
+    height: 194px;
+    border-radius: 50%;
+    background: #E29047;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle-center-title {
+    font-weight: 600;
+    font-size: 54.337px;
+    line-height: 66px;
+    color: #fff;
+}
+
+.circle-center-description {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 400;
+    font-size: 12.4199px;
+    line-height: 15px;
+    text-align: center;
+    margin-top: 5px;
+    width: 110px;
+}
+
+#circle-client, #circle-med, #circle-phase, #circle-medotd, #circle-reg {
+    position: absolute;
+    cursor: pointer;
+}
+
+#circle-client {
+    right: 1.1px;
+    top: 112.9px;
+}
+
+#circle-med {
+    bottom: 0;
+    right: 51.59px;
+}
+
+#circle-phase {
+    left: 0;
+    bottom: 11.5px;
+}
+
+#circle-medotd {
+    top: 15.5px;
+}
+
+#circle-reg {
+    top: 1.8px;
+    right: 55px;
+}
+
+.circle-active path {
+    fill: #E29047;
 }
