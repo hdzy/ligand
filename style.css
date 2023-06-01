@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1110px;
+    margin: 21px auto 45px auto;
+}
+
+.comed-logo {
+    cursor: pointer;
+}
+
+.main-section {
+    display: flex;
+    max-width: 1110px;
+    margin: 0 auto 85px auto;
+    justify-content: space-between;
+}
+
+.main-content {
+    width: 436px;
+    margin: 68px 87px 0 0;
+}
+
+.content-title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    color: #FF8000;
+}
+
+.content-info {
+    margin: 32px 0;
+    padding-left: 17px;
+}
+
+.content-info-point {
+    color: #5C7CCD;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 16px;
+}
+
+.content-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content-buttons button {
+    width: 208px;
+    height: 65px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.content-submit-button {
+    background: #4B66AB;
+    color: #fff;
+    border: none;
+}
+
+.content-learnmore-button {
+    color: #4B66AB;
+    background-color: inherit;
+    border: 2.11923px solid #4B66AB;
+}
+
+.circle-container {
+    position: relative;
+}
