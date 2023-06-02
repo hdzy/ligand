@@ -69,7 +69,6 @@ function changeCircleState(el) {
     activeContent = document.getElementsByClassName(`${elementType}-content`)[0];
     activeContent.classList.add('active-content');
     updateServices();
-    scrollToTitle();
 }
 
 document.querySelectorAll('.content-learnmore-button').forEach((e) => {
