@@ -6,6 +6,10 @@
     font-family: 'Inter', sans-serif;
 }
 
+.hidden {
+    display: none;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -274,4 +278,264 @@
     font-size: 24px;
     line-height: 29px;
     cursor: pointer;
+}
+
+.footer {
+    width: 1110px;
+    margin: 35px auto 56px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-line-f {
+    display: flex;
+}
+
+.footer-text {
+    color: #5C7CCD;
+    text-decoration: none;
+    margin-right: 100px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.footer-text:last-of-type {
+    margin-right: auto;
+}
+
+.footer-search-container {
+    position: relative;
+}
+
+#footer-search {
+    width: 221px;
+    height: 34px;
+    border: 1px solid #5C7CCD;
+    border-radius: 4px;
+    padding-left: 15px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.1px;
+    padding-right: 45px;
+}
+
+#footer-search:focus {
+    outline: none;
+}
+
+#footer-search-button {
+    position: absolute;
+    left: 188px;
+    top: 8px;
+    cursor: pointer;
+}
+
+.footer-copyright {
+    margin: 46px auto 0 auto;
+    color: #5C7CCD;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.services-section {
+    display: flex;
+    flex-direction: column;
+    width: 1110px;
+    margin: 0 auto 90px auto;
+}
+
+.services-title {
+    margin: 0 auto 41px auto;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    color: #FF8000;
+}
+
+.services-tags-container {
+    display: flex;
+    gap: 13px;
+    margin-bottom: 41px;
+}
+
+.services-tag {
+    padding: 10px 17px;
+    background: #F8F8F8;
+    border-radius: 4px;
+    color: #9DB0E1;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.services-tag[data-section="client"] {
+    min-width: 162px;
+}
+
+.services-tag-active {
+    background: #E29047;
+    color: #fff;
+}
+
+.services-content-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.services-card {
+    width: 349px;
+    min-height: 137px;
+    display: flex;
+}
+
+.services-card svg {
+    margin-top: 6.12px;
+}
+
+.services-card-active svg path {
+    fill: #4B66AB;
+}
+
+.services-card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-left: 17px;
+}
+
+.card-title {
+    color: #9DB0E1;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    width: 242px;
+}
+
+.services-card-active .card-title {
+    color: #FF8000;
+}
+
+.card-text {
+    width: 242px;
+    color: #9DB0E1;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.services-card-active .card-text {
+    color: #4B66AB;
+}
+
+.application-popup {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 3;
+
+    background: rgba(36, 42, 56, 0.68);
+    backdrop-filter: blur(20px);
+}
+
+.application-popup-content {
+    position: absolute;
+    width: 1060px;
+    height: 655px;
+    left: calc(50% - 530px);
+    top: calc(50% - 327.5px);
+    background-color: #fff;
+    padding: 63px 310px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#application-popup-close {
+    position: absolute;
+    right: 44px;
+    top: 35px;
+    cursor: pointer;
+}
+
+.application-title {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    color: #242A38;
+    margin-bottom: 16px;
+}
+
+.application-description {
+    width: 441px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 130%;
+    text-align: center;
+    color: #7E8285;
+
+    margin-bottom: 30px;
+}
+
+.application-input {
+    width: 394px;
+    height: 56px;
+    padding: 0 16.46px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.1px;
+
+    border: 1px solid #9C9C9C;
+    border-radius: 4px;
+
+    margin-bottom: 8px;
+}
+
+.application-input:focus {
+    outline: none;
+}
+
+#comment-input {
+    height: 74px;
+    resize: none;
+    padding-top: 19px;
+    padding-bottom: 19px;
+}
+
+#application-confirm {
+    width: 394px;
+    height: 56px;
+    background: #4B66AB;
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.1px;
+    cursor: pointer;
+    margin-bottom: 8px;
+}
+
+.application-button-description {
+    width: 394px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.1px;
+    color: #222222;
+    opacity: 0.7;
+}
+
+.application-button-description a {
+    text-decoration: none;
+    color: rgba(75, 102, 171, 1);
 }

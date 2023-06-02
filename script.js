@@ -2,7 +2,15 @@ let currentState = '';
 let activeCircle = document.querySelector('.circle-active');
 let activeLCircle, activeText;
 let activeContent = document.querySelector('.active-content');
+const applicationPopup = document.getElementsByClassName('application-popup')[0];
 
+const sectionsConfig = {
+    phase: ['bio-eq', 'ph-1-3', 'research', 'rwd-rwe', 'reg-create', 'docs', 'help', 'qua-mon', 'stats'],
+    medotd: ['reg-create', 'cli-help', 'lit-search', 'zo-specs', 'pres'],
+    client: ['qua-mon'],
+    reg: ['module', 'ohlp', 'cli-test', 'lit-search', 'bad-crit'],
+    med: ['comed'],
+}
 
 document.querySelectorAll('#circle-client,' +
     ' #circle-med,' +
@@ -59,6 +67,62 @@ function changeCircleState(el) {
 
     activeContent = document.getElementsByClassName(`${elementType}-content`)[0];
     activeContent.classList.add('active-content');
-
-
+    updateServices();
+    scrollToTitle();
 }
+
+document.querySelectorAll('.content-learnmore-button').forEach((e) => {
+    e.addEventListener('click', scrollToTitle)
+})
+
+function scrollToTitle() {
+    document.querySelector('.services-title').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+}
+
+document.querySelectorAll('.services-tag').forEach(e => {
+    e.addEventListener('click', updateState, e);
+})
+
+function updateState(el) {
+    if (el.target.dataset.section != undefined) {
+        currentState = el.target.dataset.section;
+
+    } else currentState = el.target.parentNode.dataset.section;
+    updateServices()
+}
+function updateServices() {
+    let activeCards = document.querySelectorAll('.services-card-active');
+    let cards = document.querySelectorAll('.services-card');
+
+    document.querySelector('.services-tag-active').classList.remove('services-tag-active');
+    document.querySelector(`.services-tag[data-section=${currentState}]`).classList.add('services-tag-active');
+
+
+    cards.forEach((e) => {
+        if (sectionsConfig[currentState].indexOf(e.dataset.section) !== -1) {
+            e.classList.add('sevices-card-active');
+        } else if (e.classList.contains('services-card-active')) {
+            e.classList.remove('services-card-active');
+        }
+    })
+
+    console.log(sectionsConfig[currentState])
+}
+
+
+document.querySelectorAll('.default-submit-button, .default-submit-button, #application-popup-close').forEach((e) => {
+    e.addEventListener('click', manageApplicationPopup)
+})
+function manageApplicationPopup() {
+    if (applicationPopup.classList.contains('hidden')) {
+        document.body.style.overflow = 'hidden';
+        applicationPopup.classList.remove('hidden');
+    } else {
+        document.body.style.overflow = 'initial';
+        applicationPopup.classList.add('hidden');
+    }
+}
+
