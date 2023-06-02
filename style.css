@@ -17,8 +17,23 @@
     margin: 21px auto 45px auto;
 }
 
-.comed-logo {
+.comed-container:hover .comed-logo-hover {
+    display: initial;
     cursor: pointer;
+}
+
+.comed-container:hover .comed-logo {
+    display: none;
+}
+
+
+.comed-logo-hover {
+    display: none;
+}
+
+
+.comed-logo:hover {
+    display: none;
 }
 
 .main-section {

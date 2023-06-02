@@ -5,6 +5,7 @@ let activeContent = document.querySelector('.active-content');
 const applicationPopup = document.getElementsByClassName('application-popup')[0];
 
 const sectionsConfig = {
+    all: ['bio-eq', 'ph-1-3', 'research', 'rwd-rwe', 'reg-create', 'docs', 'help', 'qua-mon', 'stats', 'bio-eq', 'ph-1-3', 'research', 'rwd-rwe', 'reg-create', 'docs', 'help', 'qua-mon', 'stats', 'reg-create', 'cli-help', 'lit-search', 'zo-specs', 'pres', 'qua-mon', 'module', 'ohlp', 'cli-test', 'lit-search', 'bad-crit', 'comed'],
     phase: ['bio-eq', 'ph-1-3', 'research', 'rwd-rwe', 'reg-create', 'docs', 'help', 'qua-mon', 'stats'],
     medotd: ['reg-create', 'cli-help', 'lit-search', 'zo-specs', 'pres'],
     client: ['qua-mon'],
@@ -87,12 +88,11 @@ document.querySelectorAll('.services-tag').forEach(e => {
 })
 
 function updateState(el) {
-    changeCircleState(el)
+    if (el.target.dataset.section !== 'all') changeCircleState(el)
     if (el.target.dataset.section != undefined) {
         currentState = el.target.dataset.section;
-
     } else currentState = el.target.parentNode.dataset.section;
-
+    updateServices();
 }
 function updateServices() {
     let activeCards = document.querySelectorAll('.services-card-active');
@@ -104,13 +104,11 @@ function updateServices() {
 
     cards.forEach((e) => {
         if (sectionsConfig[currentState].indexOf(e.dataset.section) !== -1) {
-            console.log(e.dataset.section);
             e.classList.add('services-card-active');
         } else if (e.classList.contains('services-card-active')) {
             e.classList.remove('services-card-active');
         }
     })
-    console.log(123);
 }
 
 
@@ -127,3 +125,31 @@ function manageApplicationPopup() {
     }
 }
 
+manageNumbers();
+
+function manageNumbers() {
+
+    const years = document.querySelectorAll('.default-huge-text')[0].innerHTML.replace('+', '');
+    const research = document.querySelectorAll('.default-huge-text')[1].innerHTML.replace('+', '');
+    const clients = document.querySelectorAll('.default-huge-text')[2].innerHTML.replace('+', '');
+
+    let yearsCounter = 0, researchCounter = 0, clientsCounter = 0;
+
+    const intervalY = setInterval(() => {
+        if (years >= yearsCounter) document.querySelectorAll('.default-huge-text')[0].innerHTML = yearsCounter++ + '+';
+        else  clearInterval(intervalY);
+    }, 100);
+
+
+    const intervalR = setInterval(() => {
+        if (research >= researchCounter) document.querySelectorAll('.default-huge-text')[1].innerHTML = researchCounter++ + '+';
+        else  clearInterval(intervalR);
+    }, 1);
+
+
+    const intervalC = setInterval(() => {
+        if (clients >= clientsCounter) document.querySelectorAll('.default-huge-text')[2].innerHTML = clientsCounter++ + '+';
+        else  clearInterval(intervalC);
+    }, 10)
+
+}
