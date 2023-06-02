@@ -87,11 +87,12 @@ document.querySelectorAll('.services-tag').forEach(e => {
 })
 
 function updateState(el) {
+    changeCircleState(el)
     if (el.target.dataset.section != undefined) {
         currentState = el.target.dataset.section;
 
     } else currentState = el.target.parentNode.dataset.section;
-    updateServices()
+
 }
 function updateServices() {
     let activeCards = document.querySelectorAll('.services-card-active');
@@ -103,17 +104,17 @@ function updateServices() {
 
     cards.forEach((e) => {
         if (sectionsConfig[currentState].indexOf(e.dataset.section) !== -1) {
-            e.classList.add('sevices-card-active');
+            console.log(e.dataset.section);
+            e.classList.add('services-card-active');
         } else if (e.classList.contains('services-card-active')) {
             e.classList.remove('services-card-active');
         }
     })
-
-    console.log(sectionsConfig[currentState])
+    console.log(123);
 }
 
 
-document.querySelectorAll('.default-submit-button, .default-submit-button, #application-popup-close').forEach((e) => {
+document.querySelectorAll('.default-submit-button, .content-submit-button, #application-popup-close').forEach((e) => {
     e.addEventListener('click', manageApplicationPopup)
 })
 function manageApplicationPopup() {
